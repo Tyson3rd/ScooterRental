@@ -19,6 +19,10 @@ describe('User', () =>{
         const date = new Date(1982,11,4);
         expect(user.birthDate).toStrictEqual(date);
     });
+    test('User set App Download status.', () =>{
+        user.setAppDownloaded(true);
+        expect(user.isAppDownload).toBeTruthy();
+    });
     test('User app Downloaded', () =>{
         expect(user.isAppDownload).toBeTruthy();
     });

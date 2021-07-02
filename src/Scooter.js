@@ -1,14 +1,14 @@
 class Scooter {
-    constructor(id,fullCharge){
+    constructor(id,fullCharged){
         this.id = id
-        this.fullCharge = fullCharge;
+        this.fullCharge = fullCharged;
         this.maxRange = 32;
         this.currentMiles = 0;
     }
     async charge(){
-        console.log('Starting Charge');
+        //console.log('Starting Charge');
         await new Promise(resolve => setTimeout(resolve,2000)); //wait 2 seconds
-        console.log('Charge complete');
+        //console.log('Charge complete');
         this.setChargeStatus = true;
     }
     setCurrentMiles(miles){
@@ -18,8 +18,12 @@ class Scooter {
             this.setCurrentMiles = this.maxRange;
         }
     }
-    setChargeStatus(status){
-        this.fullCharge = status;
+    setChargedStatus(status){
+        if(typeof(status) === 'boolean'){
+            this.fullCharge = status;
+        }else{
+            throw new Error('Charge Status needs to be T/F');
+        }
     }
 }
 module.exports = Scooter;

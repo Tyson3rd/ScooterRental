@@ -19,7 +19,8 @@ describe('ChargeStation', () => {
     });
 
     test('Rent Scooter', () => {
-        dallas.scooterList[0].setChargeStatus(false);
+        expect(User.isOfAgeToRent(user.birthDate)).toBeGreaterThanOrEqual(18);
+        dallas.scooterList[0].setChargedStatus(false); //to test get a charged scooter.
         dallas.addScooter(new Scooter(21,true));
         expect(user.scooter).toBeNull();
         expect(dallas.scooterList.length).toBe(2);
@@ -33,11 +34,10 @@ describe('ChargeStation', () => {
     test('Return Scooter', () => {
         dallas.returnScooter(user.scooter, user);
         expect(dallas.scooterList.length).toBe(2);
-        //expect(dallas.scooterList[0].fullCharge).toBeTruthy();
     });
     test("charge", async () => {
         await dallas.scooterList[1].charge(); // we need to wait for the charge!
-        console.log("Test complete");
+        //console.log("Test complete");
         expect(dallas.scooterList[1].fullCharge).toBeTruthy();
     });
 });

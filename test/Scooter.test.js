@@ -16,12 +16,19 @@ describe('Scooter', () => {
         scooter.setCurrentMiles(5);
         expect(scooter.currentMiles).toEqual(5);
     });
+
+    test('Max Miles', () => {
+        scooter.currentMiles = 32;
+        scooter.setCurrentMiles(33);
+        expect(scooter.currentMiles).toEqual(32);
+    });
+
     test('Test change charge status', () => {
         scooter.setChargedStatus(false);
         expect(scooter.fullCharge).toBeFalsy();
     });
 
-    test('Wrong status value', () => {
+    test('Wrong status value for Charge Status', () => {
         expect(() => scooter.setChargedStatus('true')).toThrowError('Charge Status needs to be T/F');
     });
 });

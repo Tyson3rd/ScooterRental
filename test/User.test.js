@@ -34,4 +34,13 @@ describe('User', () =>{
         const valEmail = User.isEmailValid('john@email.com');
         expect(valEmail).toBeTruthy();
     });
+
+    test('Wrong status value for User App Download', () => {
+        expect(() => user.setAppDownloaded('true')).toThrowError('Download Status needs to be T/F');
+    });
+
+    test('Is App Downloaded', () =>{
+        user.setAppDownloaded(true);
+        expect(user.isAppDownload).toBeTruthy();
+    });
 });

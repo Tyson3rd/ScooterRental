@@ -1,6 +1,6 @@
 # ScooterRental
 
-#Screen Shot of Test
+#Screen Shot of Test.  
 ![Screenshot](./UML/TESTSCREENSHOT/User.png)
 ![Screenshot](./UML/TESTSCREENSHOT/Scooter.png)
 ![Screenshot](./UML/TESTSCREENSHOT/ChargeStation.png)

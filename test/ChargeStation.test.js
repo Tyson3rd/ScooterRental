@@ -4,7 +4,7 @@ const User = require('../src/User');
 
 describe('ChargeStation', () => {
     const scooter = new Scooter(22,true);
-    const dallas = new ChargeStation('Dallas');
+    const dallas = new ChargeStation('Dallas',4);
     const user = new User('Chris', 'Evans','Cap','captain.america@usa.com', new Date(1918,7,4));
     
     
@@ -16,6 +16,10 @@ describe('ChargeStation', () => {
         dallas.addScooter(scooter);
         expect(dallas.scooterList.length).toBe(1);
         expect(dallas.scooterList[0] instanceof Scooter).toBeTruthy();
+    });
+
+    test('Charge station full', () => {
+        expect(() => new ChargeStation('LAX',0).addScooter(scooter)).toThrowError('Scooter Station is full');
     });
 
     test('Rent Scooter', () => {
@@ -35,7 +39,11 @@ describe('ChargeStation', () => {
         dallas.returnScooter(user.scooter, user);
         expect(dallas.scooterList.length).toBe(2);
     });
-    
+    test('Payment on Return', () => {
+		console.log = jest.fn();
+		dallas.chargePayment(user);
+		expect(console.log).toHaveBeenCalledWith("Chris Evans $20 Charged for Scooter rental")
+    });
     test("charge", async () => {
         await dallas.scooterList[1].charge(); // we need to wait for the charge!
         //console.log("Test complete");

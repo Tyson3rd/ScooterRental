@@ -10,6 +10,9 @@ class User{
         this.scooter = null;
     }
 
+    getFullName(){
+        return this.firstName +" "+ this.lastName;
+    }
     setAppDownloaded(status){
         if(typeof(status) === 'boolean'){
             this.appDownloaded = status;
@@ -18,7 +21,7 @@ class User{
         }
     }
 
-    isAppDownload(){
+    isAppDownloaded(){
         return this.appDownloaded;
     }
 

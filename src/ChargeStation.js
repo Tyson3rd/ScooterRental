@@ -1,32 +1,41 @@
 class ChargeStation {
 
-    constructor(location){
+    constructor(location, maxScooter){
         this.location = location;
+        this.maxScooter = maxScooter;
         this.scooterList = [];
     }
 
     addScooter(scooter){
-        this.scooterList.push(scooter);
+        if(this.scooterList.length + 1 <= this.maxScooter){
+            this.scooterList.push(scooter);
+        }else{
+            throw new Error("Scooter Station is full");
+        }
     }
 
     rentScooter(){
         const found = this.scooterList.find(scooter =>{
             return scooter.fullCharge == true;
         });
-        //console.log(found.id);
+
         const index = this.scooterList.indexOf(found);
         this.scooterList.splice(index, 1);
+
         return found;
-        // return found;
     }
 
+    chargePayment(user){
+        //TODO: Charge user.
+        console.log(user.getFullName()+" $20 Charged for Scooter rental");
+    }
     returnScooter(scooter, user){
         this.scooterList.push(scooter);
         const index = this.scooterList.indexOf(scooter);
-       // console.log(index);
+        // console.log(index);
         this.scooterList[index].charge()
 
-        //TODO: Add payment steps
+        this.chargePayment(user);
     }
 }
 

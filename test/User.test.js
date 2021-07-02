@@ -9,6 +9,9 @@ describe('User', () =>{
     test('User Last Name', () =>{
         expect(user.lastName).toBe('Smith');
     });
+    test('User full name', () =>{
+        expect(user.getFullName()).toBe('John Smith');
+    });
     test('User username', () =>{
         expect(user.username).toBe('jsmith12');
     });
@@ -21,10 +24,10 @@ describe('User', () =>{
     });
     test('User set App Download status.', () =>{
         user.setAppDownloaded(true);
-        expect(user.isAppDownload).toBeTruthy();
+        expect(user.isAppDownloaded()).toBeTruthy();
     });
     test('User app Downloaded', () =>{
-        expect(user.isAppDownload).toBeTruthy();
+        expect(user.isAppDownloaded()).toBeTruthy();
     });
     test('User of Age', () =>{
         const age = User.isOfAgeToRent(user.birthDate);
@@ -41,6 +44,6 @@ describe('User', () =>{
 
     test('Is App Downloaded', () =>{
         user.setAppDownloaded(true);
-        expect(user.isAppDownload).toBeTruthy();
+        expect(user.isAppDownloaded()).toBeTruthy();
     });
 });

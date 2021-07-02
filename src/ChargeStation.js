@@ -11,6 +11,7 @@ class ChargeStation {
         this.maintenance = [];
     }
 
+    //Add scooter to avalable scooters for rent
     addScooter(scooter){
         if(this.scooterList.length + 1 <= this.maxScooter){
             this.scooterList.push(scooter);
@@ -19,6 +20,7 @@ class ChargeStation {
         }
     }
 
+    //User requests to rent a scooter
     rentScooter(user){
         //if((user.scooter) instanceof Scooter){ throw new RentError('Can only rent one scooter')}
         //if(scooterList.length === 0){ throw new Error("No Scooters at this station")}
@@ -32,16 +34,20 @@ class ChargeStation {
 
         return found;
     }
+    //Can't Rent is User has a scooter already
     cantRent(user){
         if(user.scooter != null){
             return false;
         }else{ return true;}
     }
 
+    //Charge user when added back to a station
     chargePayment(scooterID, user){
         //TODO: Charge user.
         console.log( user.getFullName() + " $20 Charged for Scooter rental ID: "+ scooterID);
     }
+
+    //Return Scooter to station
     returnScooter(scooter, user){
         this.scooterList.push(scooter);
         const index = this.scooterList.indexOf(scooter);
@@ -51,6 +57,7 @@ class ChargeStation {
         this.chargePayment(scooter.id, user);
     }
 
+    //Add Scooter to Maintenance list when flagged.
     needMaintenance(scooter){
         const index = this.scooterList.indexOf(scooter);
         const limboScooter = this.scooterList[index]

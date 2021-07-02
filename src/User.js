@@ -10,9 +10,12 @@ class User{
         this.scooter = null;
     }
 
+    //Return User Full Name
     getFullName(){
         return this.firstName +" "+ this.lastName;
     }
+
+    //Change isDownloaded status
     setAppDownloaded(status){
         if(typeof(status) === 'boolean'){
             this.appDownloaded = status;
@@ -21,20 +24,24 @@ class User{
         }
     }
 
+    //Is App Downloaded
     isAppDownloaded(){
         return this.appDownloaded;
     }
 
+    //Check is user is of age to rent a scooter
     static isOfAgeToRent(dob){
         var diff_ms = Date.now() - dob.getTime();
         var age_dt = new Date(diff_ms); 
         return Math.abs(age_dt.getUTCFullYear() - 1970);
     }
 
+    //Check is user email is valid
     static isEmailValid(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
+    //add scooter to users possession
     addScooter(sctr){
         this.scooter = sctr;
     }

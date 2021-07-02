@@ -37,9 +37,9 @@ class ChargeStation {
         }else{ return true;}
     }
 
-    chargePayment(user){
+    chargePayment(scooterID, user){
         //TODO: Charge user.
-        console.log(user.getFullName()+" $20 Charged for Scooter rental");
+        console.log( user.getFullName() + " $20 Charged for Scooter rental ID: "+ scooterID);
     }
     returnScooter(scooter, user){
         this.scooterList.push(scooter);
@@ -47,7 +47,7 @@ class ChargeStation {
         // console.log(index);
         this.scooterList[index].charge()
         user.scooter = null;
-        this.chargePayment(user);
+        this.chargePayment(scooter.id, user);
     }
 }
 

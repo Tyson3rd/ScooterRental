@@ -73,8 +73,8 @@ describe('ChargeStation', () => {
 
     test('Payment on Return', () => {
 		console.log = jest.fn();
-		ChargeStation.location[0].chargePayment(user);
-		expect(console.log).toHaveBeenCalledWith("Chris Evans $20 Charged for Scooter rental")
+		ChargeStation.location[0].chargePayment(scooter2.id, user);
+		expect(console.log).toHaveBeenCalledWith('Chris Evans $20 Charged for Scooter rental ID: 10');
     });
 
     test('User Scooter set to null', () => {

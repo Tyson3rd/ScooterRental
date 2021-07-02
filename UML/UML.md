@@ -1,7 +1,7 @@
 Use Case:
--1.As a User, I want to be able to register for account in app
--2.As a User, I want to be able to rent a scooter at a specified location.
--3.As a User, I want to be able to return a scooter and see what I was charged. 
+- 1.As a User, I want to be able to register for account in app
+- 2.As a User, I want to be able to rent a scooter at a specified location.
+- 3.As a User, I want to be able to return a scooter and see what I was charged. 
 
 ```
 class User {

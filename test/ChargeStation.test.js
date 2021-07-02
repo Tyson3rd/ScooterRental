@@ -35,6 +35,7 @@ describe('ChargeStation', () => {
         dallas.returnScooter(user.scooter, user);
         expect(dallas.scooterList.length).toBe(2);
     });
+    
     test("charge", async () => {
         await dallas.scooterList[1].charge(); // we need to wait for the charge!
         //console.log("Test complete");

@@ -20,4 +20,8 @@ describe('Scooter', () => {
         scooter.setChargedStatus(false);
         expect(scooter.fullCharge).toBeFalsy();
     });
+
+    test('Wrong status value', () => {
+        expect(() => scooter.setChargedStatus('true')).toThrowError('Charge Status needs to be T/F');
+    });
 });

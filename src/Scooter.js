@@ -8,7 +8,7 @@ class Scooter {
     //Charge when added back to station
     async charge(){
         //console.log('Starting Charge');
-        await new Promise(resolve => setTimeout(resolve,2000)); //wait 2 seconds
+        await new Promise(resolve => setTimeout(resolve, 2000)); //wait 2 seconds
         //console.log('Charge complete');
         this.setChargeStatus = true;
     }
@@ -27,6 +27,6 @@ class Scooter {
         }else{
             throw new Error('Charge Status needs to be T/F');
         }
-    }
+    } 
 }
 module.exports = Scooter;

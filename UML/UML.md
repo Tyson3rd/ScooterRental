@@ -2,7 +2,8 @@
 2.As a User, I want to be able to rent a scooter at a specified location.
 3.As a User, I want to be able to return a scooter and see what I was charged. 
 
-`class User {
+```
+class User {
     firstName: String
     lastName: String
     userName: String
@@ -36,4 +37,5 @@ class ChargeStation {
     +cantRent(user)
     +chargePayment(user)
     +returnScooter(scooter,user)
-}`
+}
+```

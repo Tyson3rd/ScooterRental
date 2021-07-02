@@ -1,3 +1,4 @@
+const Scooter = require('../src/Scooter');
 class User{
     constructor(firstName, lastName,username,email, birthDate){
         this.firstName = firstName;
@@ -6,6 +7,7 @@ class User{
         this.email = email;
         this.birthDate = birthDate;
         this.appDownloaded = false;
+        this.scooter = null;
     }
 
     setAppDownloaded(status){
@@ -28,6 +30,10 @@ class User{
 
     static isEmailValid(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    addScooter(sctr){
+        this.scooter = sctr;
     }
 }
 module.exports = User;

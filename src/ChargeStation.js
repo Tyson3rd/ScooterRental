@@ -8,6 +8,7 @@ class ChargeStation {
         this.maxScooter = maxScooter;
         this.scooterList = [];
         this.constructor.location.push(this);
+        this.maintenance = [];
     }
 
     addScooter(scooter){
@@ -48,6 +49,14 @@ class ChargeStation {
         this.scooterList[index].charge()
         user.scooter = null;
         this.chargePayment(scooter.id, user);
+    }
+
+    needMaintenance(scooter){
+        const index = this.scooterList.indexOf(scooter);
+        const limboScooter = this.scooterList[index]
+        this.maintenance.push(limboScooter);
+        this.scooterList.splice(index,1);
+        console.log('sooter added to needMaintenance')
     }
 }
 

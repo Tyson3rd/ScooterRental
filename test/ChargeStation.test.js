@@ -86,4 +86,12 @@ describe('ChargeStation', () => {
         //console.log("Test complete");
         expect(ChargeStation.location[0].scooterList[1].fullCharge).toBeTruthy();
     });
+
+    test("Scooter can be added to maintenance", async () => {
+        const testScooter = new Scooter(55,true);
+        ChargeStation.location[0].addScooter(testScooter);
+        ChargeStation.location[0].needMaintenance(testScooter);
+        console.log("Scooter:"+ChargeStation.location[0].maintenance[0]);
+        expect(ChargeStation.location[0].maintenance[0].id).toBe(55);
+    });
 });

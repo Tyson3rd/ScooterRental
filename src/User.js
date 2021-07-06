@@ -1,10 +1,11 @@
 const Scooter = require('../src/Scooter');
 class User{
-    constructor(firstName, lastName,username,email, birthDate){
+    constructor(firstName, lastName,username,email, birthDate, password){
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.birthDate = birthDate;
         this.appDownloaded = false;
         this.scooter = null;

@@ -65,6 +65,9 @@ class ChargeStation {
         this.scooterList.splice(index,1);
         console.log('sooter added to needMaintenance')
     }
+    logIn(username, password){
+        //login from Main system can do within here by creating Register user obj array or from "Main scooterRental".
+    }
 }
 
 module.exports = ChargeStation;

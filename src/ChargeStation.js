@@ -63,7 +63,7 @@ class ChargeStation {
         const limboScooter = this.scooterList[index]
         this.maintenance.push(limboScooter);
         this.scooterList.splice(index,1);
-        console.log('sooter added to needMaintenance')
+        console.log('scooter added to needMaintenance')
     }
     logIn(username, password){
         //login from Main system can do within here by creating Register user obj array or from "Main scooterRental".

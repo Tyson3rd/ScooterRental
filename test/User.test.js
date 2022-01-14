@@ -1,4 +1,4 @@
-// Testing 
+// Testing with jest
 const User = require('../src/User');
 
 describe('User', () =>{

@@ -31,7 +31,7 @@ describe('User', () =>{
     });
     test('User of Age', () =>{
         const age = User.isOfAgeToRent(user.birthDate);
-        expect(age).toBe(38);
+        expect(age).toBe(39);
     });
     test('User Email Validation', () =>{
         const valEmail = User.isEmailValid('john@email.com');
